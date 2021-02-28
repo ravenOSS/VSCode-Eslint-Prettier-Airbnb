@@ -43,6 +43,10 @@ npx install-peerdeps --dev eslint-config-airbnb
   }
 }
 ```
+## ALTERNATIVE
+Script source:<br>
+https://github.com/paulolramos/eslint-prettier-airbnb-react
+
 
 ### Reference
 * ESLint Rules - https://eslint.org/docs/rules/
