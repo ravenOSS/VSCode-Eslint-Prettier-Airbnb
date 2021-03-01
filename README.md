@@ -54,7 +54,13 @@ npx install-peerdeps --dev eslint-config-airbnb
 
 ```json
 {
-  "extends": ["airbnb", "prettier", "plugin:node/recommended"],
+  "extends": [
+    "airbnb",
+    "prettier",
+    "plugin:node/recommended",
+    "eslint:recommended",
+    "plugin:node/recommended"
+  ],
   "plugins": ["prettier"],
   "rules": {
     "prettier/prettier": "error",
@@ -69,13 +75,19 @@ npx install-peerdeps --dev eslint-config-airbnb
 ```
 
 - TODO Review eslint settings in vscode settings.json
-- TODO Include Babel configuration
+- TODO Include Babel config
+- TODO Review node plugin config (engines?)
+- TODO Review eslint-config-node config
+- TODO Normalize config files to readme content
 
-## ALTERNATIVE
+## ALTERNATIVES
 
-This repo provides a command line script that builds a configuration in a project folder.<br>
-Script source:<br>
-https://github.com/paulolramos/eslint-prettier-airbnb-react
+- This repo provides a command line script that builds a configuration in a project folder.<br>
+  Script source:<br>
+  https://github.com/paulolramos/eslint-prettier-airbnb-react
+
+- Blogpost:
+  https://dev.to/bigyank/a-quick-guide-to-setup-eslint-with-airbnb-and-prettier-3di2
 
 ### Reference
 
