@@ -1,14 +1,15 @@
 # VSCode - ESLint, Prettier & Airbnb Setup
 
-The recommendation is to install packages on a per project basis except for ESLint & Prettier.<br>
+The recommendation is to install packages on a per project basis except for ESLint & Prettier which are installed globally.<br>
 
-This ensures that anyone using the repository will not run into  
-conflicts with their own configurations.<br>
+This ensures that anyone cloning a repository with the given settings will not run into conflicts with their own configurations.<br>
 
 Objective is to not overlap linting (code syntax) with formatting.<br>
 Prettier is the formatting tool and Airbnb provides a ruleset.<br>
 
-Two local config files are required .eslintrc.json and .prettierrc.<br>
+Two local config files are required in project root: .eslintrc.json and .prettierrc.<br>
+
+Tune the configurations to your needs by reviewing package information.
 
 ### 1. Install ESLint & Prettier from extensions panel in VSCode<br>
 
@@ -16,7 +17,9 @@ These will be installed globally
 
 ### 2. Configure VSCode
 
-Open Optional - Set format on save and any global prettier options
+- There are some options provided in the VSCode settings.json.
+- Set format on save and any global prettier options.
+- Ensure that eslint is not selected as the code formatter.
 
 ### 3. Install Packages
 
@@ -24,11 +27,28 @@ Open Optional - Set format on save and any global prettier options
 npm i -D eslint prettier eslint-plugin-prettier eslint-config-prettier eslint-plugin-node eslint-config-node
 ```
 
+Note that the following uses npx
+
 ```
 npx install-peerdeps --dev eslint-config-airbnb
 ```
 
 ### 4. Create .prettierrc for any prettier rules (semicolons, quotes, etc)
+
+```json
+{
+  "printWidth": 80,
+  "tabWidth": 2,
+  "useTabs": false,
+  "semi": false,
+  "singleQuote": true,
+  "jsxSingleQuote": true,
+  "trailingComma": "es5",
+  "bracketSpacing": true,
+  "jsxBracketSameLine": false,
+  "arrowParens": "always"
+}
+```
 
 ### 5. Create .eslintrc.json file (You can generate with eslint --init if you install eslint globally)
 
@@ -48,8 +68,12 @@ npx install-peerdeps --dev eslint-config-airbnb
 }
 ```
 
+- TODO Review eslint settings in vscode settings.json
+- TODO Include Babel configuration
+
 ## ALTERNATIVE
 
+This repo provides a command line script that builds a configuration in a project folder.<br>
 Script source:<br>
 https://github.com/paulolramos/eslint-prettier-airbnb-react
 
